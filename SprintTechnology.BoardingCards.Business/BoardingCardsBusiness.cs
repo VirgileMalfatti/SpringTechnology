@@ -5,25 +5,42 @@ namespace SprintTechnology.BoardingCards.Business
 {
     public class BoardingCardsBusiness
     {
-        public static LinkedList<BoardingCardModel> ReorderCards(LinkedList<BoardingCardModel> boardingCardsModelList)
+        public LinkedList<BoardingCardModel> ReorderCardsRecursive(LinkedList<BoardingCardModel> boardingCardsModelList)
         {
-            // Getting the last step
-            var current = boardingCardsModelList.Find(boardingCardsModelList.Where(x => x.Destination == null).First());
+            var startStep = boardingCardsModelList.First();
 
-            do
+            var previousSteps = new LinkedList<BoardingCardModel>();
+
+            previousSteps.AddLast(GetBoardingPreviousStep(boardingCardsModelList, previousSteps, startStep));
+            if(boardingCardsModelList.Count > 0)
             {
-                var previousStep = boardingCardsModelList.Find(boardingCardsModelList.Where(x => x.Destination == current.Value.Departure).FirstOrDefault());
-
-                //if no previous step is found : starting point found
-                if(previousStep == null)
-                    break;
-                boardingCardsModelList.Remove(previousStep);
-                boardingCardsModelList.AddBefore(current, previousStep);
-                current = previousStep;
+                var currentLastStep = previousSteps.Last;
+                GetBoardingNextStep(boardingCardsModelList, previousSteps, startStep, currentLastStep);
             }
-            while (current != null);
 
-            return boardingCardsModelList;
+            return previousSteps;
+        }
+
+        private BoardingCardModel GetBoardingPreviousStep(LinkedList<BoardingCardModel> allCards, LinkedList<BoardingCardModel> resultList, BoardingCardModel currentCard)
+        {
+            var nextCard = allCards.Find(allCards.Where(x => x.Destination == currentCard.Departure).FirstOrDefault());
+            if (nextCard != null)
+            {
+                allCards.Remove(nextCard);
+                resultList.AddLast(GetBoardingPreviousStep(allCards, resultList, nextCard.Value));
+            }
+            return currentCard;
+        }
+
+        private BoardingCardModel GetBoardingNextStep(LinkedList<BoardingCardModel> allCards, LinkedList<BoardingCardModel> previousSteps, BoardingCardModel currentCard, LinkedListNode<BoardingCardModel> startingPreviousStep)
+        {
+            var nextCard = allCards.Find(allCards.Where(x => x.Departure == currentCard.Destination).FirstOrDefault());
+            if (nextCard != null)
+            {
+                allCards.Remove(nextCard);
+                previousSteps.AddAfter(startingPreviousStep, GetBoardingNextStep(allCards, previousSteps, nextCard.Value,startingPreviousStep));
+            }
+            return currentCard;
         }
     }
 }

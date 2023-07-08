@@ -10,7 +10,13 @@ namespace SprintTechnology.BoardingCards.Controllers
     [ApiController]
     public class BoardingCardsController : ControllerBase
     {
-        // GET: api/<BoardingCardsController>
+        private readonly BoardingCardsBusiness boardingCardsBusiness;
+
+        public BoardingCardsController(BoardingCardsBusiness boardingCardsBusiness)
+        {
+            this.boardingCardsBusiness = boardingCardsBusiness;
+        }
+
         [HttpGet]
         public IEnumerable<string> Get()
         {
@@ -30,7 +36,7 @@ namespace SprintTechnology.BoardingCards.Controllers
         {
             if(boardingDescription.Data != null)
             {
-                var orderedlist = BoardingCardsBusiness.ReorderCards(boardingDescription.Data);
+                var orderedlist = boardingCardsBusiness.ReorderCardsRecursive(boardingDescription.Data);
                 return Ok(new BoardingDescription { Data = orderedlist });
             }
             return BadRequest();
