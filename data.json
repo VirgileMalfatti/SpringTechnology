@@ -1,0 +1,39 @@
+{
+    "data":
+    [
+        {
+            "Name": "Ger-Sto",
+            "Type": "flight",
+            "Departure":"Gerona Airport",
+            "Destination":"Stockolm",
+            "Number":"SK455",
+            "Gate":"45B",
+            "Seat":"3A",
+            "BaggageTicketCounter":"344"
+        },
+        {
+            "Name": "Mad-Bar",
+            "Type": "train",
+            "Departure":"Madrid",
+            "Destination":"Barcelona",
+            "Number":"78A",
+            "Seat":"45B"
+        },
+        {
+            "Name": "Sto-New",
+            "Type": "flight",
+            "Departure":"Stockolm",
+            "Destination":"New-York JFK",
+            "FlightNumber": "SK22",
+            "Gate":"22",
+            "Seat":"7B",
+            "BaggageAutoTransfer":true
+        },
+        {
+            "Name": "Bar-Ger",
+            "Type": "airport bus",
+            "Departure":"Barcelona",
+            "Destination":"Gerona Airport"
+        }
+    ]
+}
