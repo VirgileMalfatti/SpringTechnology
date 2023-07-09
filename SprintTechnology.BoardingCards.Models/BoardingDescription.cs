@@ -1,8 +1,11 @@
-﻿namespace SprintTechnology.BoardingCards.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SprintTechnology.BoardingCards.Models
 {
     public class BoardingDescription
     {
-        public string? Description { get; set; }
+        public List<string>? Description { get; set; }
+        [Required]
         public LinkedList<BoardingCardModel>? Data { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SprintTechnology.BoardingCards.Business;
 using SprintTechnology.BoardingCards.Models;
+using SprintTechnology.BoardingCards.Models.Exceptions;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -17,41 +18,25 @@ namespace SprintTechnology.BoardingCards.Controllers
             this.boardingCardsBusiness = boardingCardsBusiness;
         }
 
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<BoardingCardsController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         // POST api/<BoardingCardsController>
         [HttpPost]
         public IActionResult Post([FromBody] BoardingDescription boardingDescription)
         {
             if(boardingDescription.Data != null)
             {
-                var orderedlist = boardingCardsBusiness.ReorderCardsRecursive(boardingDescription.Data);
-                return Ok(new BoardingDescription { Data = orderedlist });
+                try
+                {
+                    var orderedlist = boardingCardsBusiness.ReorderCardsRecursive(boardingDescription.Data);
+                    var description = BoardingCardsBusiness.CreateCardsDescription(orderedlist);
+                    return Ok(new BoardingDescription { Data = orderedlist, Description = description });
+                }
+                catch (OrphanCardException) 
+                {
+                    return UnprocessableEntity();
+                }
             }
             return BadRequest();
         }
 
-        // PUT api/<BoardingCardsController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<BoardingCardsController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
