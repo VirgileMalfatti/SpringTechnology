@@ -9,19 +9,19 @@ namespace SprintTechnology.BoardingCards.Business
         {
             var startStep = boardingCardsModelList.First();
 
-            var previousSteps = new LinkedList<BoardingCardModel>();
+            var travelingSteps = new LinkedList<BoardingCardModel>();
 
-            previousSteps.AddLast(GetBoardingPreviousStep(boardingCardsModelList, previousSteps, startStep));
+            travelingSteps.AddLast(GetBoardingPreviousStep(boardingCardsModelList, travelingSteps, startStep));
 
             // if no remaining boarding cards, it means that all steps are previous steps of the first item, no need to iterate
             if (boardingCardsModelList.Count > 0)
             {
-                var currentLastStep = previousSteps.Last;
-                GetBoardingNextStep(boardingCardsModelList, previousSteps, startStep, currentLastStep);
+                var currentLastStep = travelingSteps.Last;
+                GetBoardingNextStep(boardingCardsModelList, travelingSteps, startStep, currentLastStep);
             }
             if (boardingCardsModelList.Count > 1)
                 throw new OrphanCardException($"{boardingCardsModelList.Count} cards are not linked. Cannot finish process.");
-            return previousSteps;
+            return travelingSteps;
         }
 
         private BoardingCardModel GetBoardingPreviousStep(LinkedList<BoardingCardModel> allCards, LinkedList<BoardingCardModel> resultList, BoardingCardModel currentCard)
