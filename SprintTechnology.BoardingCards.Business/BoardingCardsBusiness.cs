@@ -1,6 +1,5 @@
 ﻿using SprintTechnology.BoardingCards.Models;
 using SprintTechnology.BoardingCards.Models.Exceptions;
-using System.Security.Cryptography.X509Certificates;
 
 namespace SprintTechnology.BoardingCards.Business
 {
@@ -15,7 +14,7 @@ namespace SprintTechnology.BoardingCards.Business
             previousSteps.AddLast(GetBoardingPreviousStep(boardingCardsModelList, previousSteps, startStep));
 
             // if no remaining boarding cards, it means that all steps are previous steps of the first item, no need to iterate
-            if(boardingCardsModelList.Count > 0)
+            if (boardingCardsModelList.Count > 0)
             {
                 var currentLastStep = previousSteps.Last;
                 GetBoardingNextStep(boardingCardsModelList, previousSteps, startStep, currentLastStep);
@@ -42,15 +41,15 @@ namespace SprintTechnology.BoardingCards.Business
             if (nextCard != null)
             {
                 allCards.Remove(nextCard);
-                previousSteps.AddAfter(startingPreviousStep, GetBoardingNextStep(allCards, previousSteps, nextCard.Value,startingPreviousStep));
+                previousSteps.AddAfter(startingPreviousStep, GetBoardingNextStep(allCards, previousSteps, nextCard.Value, startingPreviousStep));
             }
             return currentCard;
         }
 
-        public static List<string> CreateCardsDescription(LinkedList<BoardingCardModel> boardingCardsModelList) 
+        public static List<string> CreateCardsDescription(LinkedList<BoardingCardModel> boardingCardsModelList)
         {
             var descriptionList = new List<string>();
-            foreach(var card in boardingCardsModelList)
+            foreach (var card in boardingCardsModelList)
             {
                 var cardDescription = string.Empty;
                 if (card.Type == "flight")

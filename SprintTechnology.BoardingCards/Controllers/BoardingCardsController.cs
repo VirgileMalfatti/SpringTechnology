@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SprintTechnology.BoardingCards.Business;
+using SprintTechnology.BoardingCards.ErrorMessages;
 using SprintTechnology.BoardingCards.Models;
 using SprintTechnology.BoardingCards.Models.Exceptions;
 
@@ -22,7 +23,7 @@ namespace SprintTechnology.BoardingCards.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] BoardingDescription boardingDescription)
         {
-            if(boardingDescription.Data != null)
+            if (boardingDescription.Data != null)
             {
                 try
                 {
@@ -30,9 +31,9 @@ namespace SprintTechnology.BoardingCards.Controllers
                     var description = BoardingCardsBusiness.CreateCardsDescription(orderedlist);
                     return Ok(new BoardingDescription { Data = orderedlist, Description = description });
                 }
-                catch (OrphanCardException) 
+                catch (OrphanCardException ex)
                 {
-                    return UnprocessableEntity();
+                    return UnprocessableEntity(new ErrorResponse { Message = ex.Message });
                 }
             }
             return BadRequest();
