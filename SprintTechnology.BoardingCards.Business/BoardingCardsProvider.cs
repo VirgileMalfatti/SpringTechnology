@@ -3,7 +3,7 @@ using SprintTechnology.BoardingCards.Models.Exceptions;
 
 namespace SprintTechnology.BoardingCards.Business
 {
-    public class BoardingCardsBusiness
+    public class BoardingCardsProvider
     {
         public LinkedList<BoardingCardModel> ReorderCardsRecursive(LinkedList<BoardingCardModel> boardingCardsModelList)
         {

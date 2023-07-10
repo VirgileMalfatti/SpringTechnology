@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddScoped<BoardingCardsBusiness>();
+builder.Services.AddScoped<BoardingCardsProvider>();
 
 var app = builder.Build();
 

@@ -5,9 +5,9 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SprintTechnology.BoardingCards", "SprintTechnology.BoardingCards\SprintTechnology.BoardingCards.csproj", "{E9761CCE-03B5-49A1-B874-24080C7A347B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SprintTechnology.BoardingCards.Business", "SprintTechnology.BoardingCards.Business\SprintTechnology.BoardingCards.Business.csproj", "{94AFC99E-3B4B-40DD-A960-F2D508459D1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SprintTechnology.BoardingCards.Providers", "SprintTechnology.BoardingCards.Business\SprintTechnology.BoardingCards.Providers.csproj", "{94AFC99E-3B4B-40DD-A960-F2D508459D1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SprintTechnology.BoardingCards.Models", "SprintTechnology.BoardingCards.Models\SprintTechnology.BoardingCards.Models.csproj", "{5DD8222F-FB88-41D8-BA4B-92B9A23283A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SprintTechnology.BoardingCards.Models", "SprintTechnology.BoardingCards.Models\SprintTechnology.BoardingCards.Models.csproj", "{5DD8222F-FB88-41D8-BA4B-92B9A23283A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

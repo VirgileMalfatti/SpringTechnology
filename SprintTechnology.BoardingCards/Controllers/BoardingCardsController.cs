@@ -12,9 +12,9 @@ namespace SprintTechnology.BoardingCards.Controllers
     [ApiController]
     public class BoardingCardsController : ControllerBase
     {
-        private readonly BoardingCardsBusiness boardingCardsBusiness;
+        private readonly BoardingCardsProvider boardingCardsBusiness;
 
-        public BoardingCardsController(BoardingCardsBusiness boardingCardsBusiness)
+        public BoardingCardsController(BoardingCardsProvider boardingCardsBusiness)
         {
             this.boardingCardsBusiness = boardingCardsBusiness;
         }
@@ -28,7 +28,7 @@ namespace SprintTechnology.BoardingCards.Controllers
                 try
                 {
                     var orderedlist = boardingCardsBusiness.ReorderCardsRecursive(boardingDescription.Data);
-                    var description = BoardingCardsBusiness.CreateCardsDescription(orderedlist);
+                    var description = BoardingCardsProvider.CreateCardsDescription(orderedlist);
                     return Ok(new BoardingDescription { Data = orderedlist, Description = description });
                 }
                 catch (OrphanCardException ex)
