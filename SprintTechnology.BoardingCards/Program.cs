@@ -1,4 +1,4 @@
-using SprintTechnology.BoardingCards.Business;
+using SprintTechnology.BoardingCards.Providers;
 
 var builder = WebApplication.CreateBuilder(args);
 

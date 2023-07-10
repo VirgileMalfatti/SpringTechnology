@@ -1,5 +1,5 @@
 using FluentAssertions;
-using SprintTechnology.BoardingCards.Business;
+using SprintTechnology.BoardingCards.Providers;
 using SprintTechnology.BoardingCards.Models;
 using SprintTechnology.BoardingCards.Models.Exceptions;
 using System.Linq;

@@ -5,11 +5,11 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SprintTechnology.BoardingCards", "SprintTechnology.BoardingCards\SprintTechnology.BoardingCards.csproj", "{E9761CCE-03B5-49A1-B874-24080C7A347B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SprintTechnology.BoardingCards.Providers", "SprintTechnology.BoardingCards.Business\SprintTechnology.BoardingCards.Providers.csproj", "{94AFC99E-3B4B-40DD-A960-F2D508459D1C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SprintTechnology.BoardingCards.Models", "SprintTechnology.BoardingCards.Models\SprintTechnology.BoardingCards.Models.csproj", "{5DD8222F-FB88-41D8-BA4B-92B9A23283A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SprintTechnology.BoardingCards.Tests", "SprintTechnology.BoardingCards.Tests\SprintTechnology.BoardingCards.Tests.csproj", "{39C33AE7-6772-4F18-9A0C-C1348F81E4CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SprintTechnology.BoardingCards.Providers", "SprintTechnology.BoardingCards.Providers\SprintTechnology.BoardingCards.Providers.csproj", "{0EDF148B-5A26-4385-9235-FEA193D93295}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{E9761CCE-03B5-49A1-B874-24080C7A347B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9761CCE-03B5-49A1-B874-24080C7A347B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9761CCE-03B5-49A1-B874-24080C7A347B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{94AFC99E-3B4B-40DD-A960-F2D508459D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{94AFC99E-3B4B-40DD-A960-F2D508459D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{94AFC99E-3B4B-40DD-A960-F2D508459D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{94AFC99E-3B4B-40DD-A960-F2D508459D1C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5DD8222F-FB88-41D8-BA4B-92B9A23283A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5DD8222F-FB88-41D8-BA4B-92B9A23283A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DD8222F-FB88-41D8-BA4B-92B9A23283A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{39C33AE7-6772-4F18-9A0C-C1348F81E4CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39C33AE7-6772-4F18-9A0C-C1348F81E4CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39C33AE7-6772-4F18-9A0C-C1348F81E4CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EDF148B-5A26-4385-9235-FEA193D93295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EDF148B-5A26-4385-9235-FEA193D93295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EDF148B-5A26-4385-9235-FEA193D93295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EDF148B-5A26-4385-9235-FEA193D93295}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

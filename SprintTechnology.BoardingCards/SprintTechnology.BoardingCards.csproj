@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SprintTechnology.BoardingCards.Business\SprintTechnology.BoardingCards.Providers.csproj" />
     <ProjectReference Include="..\SprintTechnology.BoardingCards.Models\SprintTechnology.BoardingCards.Models.csproj" />
+    <ProjectReference Include="..\SprintTechnology.BoardingCards.Providers\SprintTechnology.BoardingCards.Providers.csproj" />
   </ItemGroup>
 
 </Project>

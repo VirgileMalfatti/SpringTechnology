@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SprintTechnology.BoardingCards.Business;
+using SprintTechnology.BoardingCards.Providers;
 using SprintTechnology.BoardingCards.ErrorMessages;
 using SprintTechnology.BoardingCards.Models;
 using SprintTechnology.BoardingCards.Models.Exceptions;

@@ -1,7 +1,7 @@
 ﻿using SprintTechnology.BoardingCards.Models;
 using SprintTechnology.BoardingCards.Models.Exceptions;
 
-namespace SprintTechnology.BoardingCards.Business
+namespace SprintTechnology.BoardingCards.Providers
 {
     public class BoardingCardsProvider
     {
