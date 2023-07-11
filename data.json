@@ -24,7 +24,7 @@
             "Type": "flight",
             "Departure":"Stockolm",
             "Destination":"New-York JFK",
-            "FlightNumber": "SK22",
+            "Number": "SK22",
             "Gate":"22",
             "Seat":"7B",
             "BaggageAutoTransfer":true
